@@ -29,7 +29,8 @@
 .containers {
     display: flex;
     flex-direction: row;
-    gap: 10rem; /* Jarak antar kolom */
+    
+    gap: 15rem; /* Jarak antar kolom */
   }
   
   .column {
@@ -46,4 +47,54 @@
       
     }
     
+}
+
+.laterrwelcom{
+  letter-spacing: 6px; font-family: 'Raleway', sans-serif !important; display: flex;justify-content: center;font-size: 50px;font-weight: 800;color: white;
+}
+.latterpadd{
+  padding: 10px;padding-top: 30px;
+} 
+@media (max-width: 768px) {
+
+  .laterrwelcom{
+    letter-spacing: 6px; font-family: 'Raleway', sans-serif !important; display: none;justify-content: center;font-size: 50px;font-weight: 800;color: white;
+  }
+  .latterpadd{
+    padding: 10px;padding-top: 20px;padding-bottom: 2px;
+  } 
+}
+
+
+    
+@media (min-width: 768px) {
+
+  .laterrwelcom{
+    letter-spacing: 6px; font-family: 'Raleway', sans-serif !important; display: flex;justify-content: center;font-size: 50px;font-weight: 800;color: white;
+  }
+  .latterpadd{
+    padding: 10px;padding-top: 40px;
+  } 
+}
+@media (max-width: 1309px) {
+
+  .containers {
+    display: flex;
+    flex-direction: row;
+    
+    gap: 5rem; /* Jarak antar kolom */
+  }
+}
+
+@media (max-width: 939px) {
+
+  .containers {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    gap: 3rem; /* Jarak antar kolom */
+  }
+  .laterrwelcom{
+    letter-spacing: 6px; font-family: 'Raleway', sans-serif !important; display: none;justify-content: center;font-size: 50px;font-weight: 800;color: white;
+  }
 }
