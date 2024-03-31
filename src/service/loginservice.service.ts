@@ -1333,7 +1333,7 @@ export class LoginserviceService {
   }
  
   login(username: string, password: string): Observable<boolean> {
-    localStorage.setItem('usrInfo', JSON.stringify(username));
+    localStorage.setItem('usrInfo', username);
     const user = this.users.find(u => u.username === username && u.password === password);
     if (user) {
       
