@@ -17,7 +17,7 @@ export class LoginmenuComponent {
     .subscribe({
       next: (response) => {
        
-        
+        localStorage.setItem('usrInfo', JSON.stringify(this.username));
         this.isLoggin();
 
      

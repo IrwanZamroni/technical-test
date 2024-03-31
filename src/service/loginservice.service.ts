@@ -1333,12 +1333,18 @@ export class LoginserviceService {
   }
  
   login(username: string, password: string): Observable<boolean> {
-    
+    localStorage.setItem('usrInfo', JSON.stringify(username));
     const user = this.users.find(u => u.username === username && u.password === password);
     if (user) {
+      
       const token =this.generateRandomToken()
       localStorage.setItem('token',token);
-      localStorage.setItem('usrInfo', JSON.stringify(username));
+      const tokenExpiration = new Date();
+      tokenExpiration.setTime(tokenExpiration.getTime() + (5 * 60 * 60 * 1000)); 
+  
+      localStorage.setItem('token', token);
+      localStorage.setItem('tokenExpiration', tokenExpiration.toString());
+     
       return of(true);
     } else {
       Swal.fire({
@@ -1366,12 +1372,37 @@ export class LoginserviceService {
     }
     return token;
   }
-  verifyLogin(): boolean {
  
+  verifyLogin(): boolean {
+    const token = localStorage.getItem('token');
+    const tokenExpiration = localStorage.getItem('tokenExpiration');
+    if (token && tokenExpiration) {
+      const now = new Date().getTime();
+      const expirationTime = new Date(tokenExpiration).getTime();
+      if (now < expirationTime) {
+      
+        return true;
+      } else {
+      
+        localStorage.removeItem('token');
+        localStorage.clear();
+        localStorage.removeItem('tokenExpiration');
+        Swal.fire({
+          icon: 'warning',
+          title: 'Token Expired',
+          text: 'Your session has expired. Please login again.',
+          timer: 5000, 
+            timerProgressBar: true, 
+            allowOutsideClick: false,
+        });
+        return false;
+      }
+    } else {
    
-    return localStorage.getItem('token') !== null;
+      return false;
+    }
   }
-
+  
 
   updateEmployee(updatedEmployee: any): Observable<any> {
     
