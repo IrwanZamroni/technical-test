@@ -32,7 +32,7 @@ export class DetailemployeeComponent {
             Swal.fire({
               icon: 'error',
               title: 'Employee Not Found',
-              text: 'The employee you are trying to access does not exist.',
+              text: 'The employee you are trying to access does not exist.Please select the employee details button in the employee list menu',
               confirmButtonText: 'OK',
               timer: 3000, 
               timerProgressBar: true, 
