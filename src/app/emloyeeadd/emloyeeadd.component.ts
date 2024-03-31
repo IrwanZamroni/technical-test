@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import {LoginserviceService} from '../../service/loginservice.service'
 
+
 @Component({
   selector: 'app-emloyeeadd',
   templateUrl: './emloyeeadd.component.html',

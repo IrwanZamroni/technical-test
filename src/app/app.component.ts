@@ -7,11 +7,13 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-  username?:any;
+  username:any;
   constructor(private router: Router) {
    
-    const usernames = localStorage.getItem('usrInfo')
-    this.username=JSON.parse(usernames?usernames:'')
+
+      const usernames = localStorage.getItem('usrInfo');
+      this.username = JSON.parse(usernames || "null");
+ 
 
    
 

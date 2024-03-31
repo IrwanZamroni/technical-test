@@ -25,6 +25,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FormatSalaryPipe } from '../app/employeelist/employeelist.component';
 import { MatListModule } from '@angular/material/list';
 import { NgSelectModule } from '@ng-select/ng-select';
+import {NumberFormat} from '../../src/app/only.directive'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     EmloyeeaddComponent,
     ModalComponent,
     DetailemployeeComponent,
-    FormatSalaryPipe
+    FormatSalaryPipe,
+    NumberFormat
   
   ],
   imports: [

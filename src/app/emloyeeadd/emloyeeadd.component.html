@@ -63,7 +63,7 @@
             </div>
             <div class="mb-3">
               <label>Basic Salary:<span style="color: red;">*</span></label>
-              <input type="number" class="form-control" formControlName="basicSalary">
+              <input type="number" class="form-control" formControlName="basicSalary" appNumberformat>
               <div *ngIf="employeeForm?.get('basicSalary')?.invalid && employeeForm?.get('basicSalary')?.touched" class="text-danger">
                 Basic salary must be a number.
               </div>
