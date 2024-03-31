@@ -69,7 +69,7 @@ export class EmloyeeaddComponent implements OnInit {
       this.loginService.addEmployee(newEmployee).subscribe(
         (result) => {
         
-        
+          this.employeeForm.reset();
           // this.router.navigate(['/home']);
          
           Swal.fire({
