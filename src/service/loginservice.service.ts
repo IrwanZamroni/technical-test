@@ -1368,7 +1368,7 @@ export class LoginserviceService {
   }
   verifyLogin(): boolean {
  
-    console.log(localStorage.getItem('token'))
+   
     return localStorage.getItem('token') !== null;
   }
 

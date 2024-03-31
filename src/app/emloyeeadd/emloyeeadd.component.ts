@@ -68,9 +68,9 @@ export class EmloyeeaddComponent implements OnInit {
 
       this.loginService.addEmployee(newEmployee).subscribe(
         (result) => {
-          console.log('New employee added:', result);
         
-          this.router.navigate(['/home']);
+        
+          // this.router.navigate(['/home']);
          
           Swal.fire({
             icon: 'success',
@@ -81,13 +81,13 @@ export class EmloyeeaddComponent implements OnInit {
           })
         },
         (error) => {
-          console.error('Error adding new employee:', error);
+        
        
         }
       );
     } else {
      
-      console.error('Form is invalid');
+    
     }
   }
 }
