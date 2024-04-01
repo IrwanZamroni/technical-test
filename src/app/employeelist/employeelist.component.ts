@@ -187,14 +187,14 @@ export class EmployeelistComponent {
   }
   
   
-  transformBasicSalaryToNumber(formattedValue: string): number {
+  // transformBasicSalaryToNumber(formattedValue: string): number {
     
-    const numericValue = formattedValue.replace(/\D/g, '');
+  //   const numericValue = formattedValue.replace(/\D/g, '');
    
-    const truncatedValue = numericValue.slice(0, -2);
+  //   const truncatedValue = numericValue.slice(0, -2);
    
-    return parseFloat(truncatedValue) || 0;
-  }
+  //   return parseFloat(truncatedValue) || 0;
+  // }
 
   sortBy(column: string): void {
     this.currentPage = 1; 
