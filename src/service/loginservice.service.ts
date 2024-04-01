@@ -1312,8 +1312,10 @@ export class LoginserviceService {
           B = b.description.toUpperCase();
           break;
         default:
-          A = '';
-          B = '';
+          // A = '';
+          // B = '';
+          A = a.username.toUpperCase();
+          B = b.username.toUpperCase();
       }
       let resaultSort = 0;
       if (A > B) {
