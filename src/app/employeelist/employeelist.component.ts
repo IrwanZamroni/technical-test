@@ -127,7 +127,7 @@ export class EmployeelistComponent {
   }
 
   search(): void {
-   
+   debugger
     this.currentPage = 1; 
     this.loadEmployees( this.searchUsername,
       this.searchFirstName,
@@ -162,7 +162,12 @@ export class EmployeelistComponent {
       sortAsc
     ).subscribe((data: any) => {
       this.totalPages = Math.ceil(data.total / this.pageSize);
-      this.pagedItems = data.results
+      this.pagedItems = data.results.map((item:any) => {
+        return {
+          ...item,
+          basicSalary: item.basicSalary 
+        };
+      });
     });
     const isFormChanged = this.isFormChanged();
 
@@ -215,7 +220,7 @@ export class EmployeelistComponent {
     );
   }
   pageSizeChanged(): void {
- 
+    this.currentPage = 1; 
     this.pageSize = Number(this.pageSize);
     this.loadEmployees(this.searchUsername,
       this.searchFirstName,
