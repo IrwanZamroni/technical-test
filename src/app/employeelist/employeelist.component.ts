@@ -162,12 +162,8 @@ export class EmployeelistComponent {
       sortAsc
     ).subscribe((data: any) => {
       this.totalPages = Math.ceil(data.total / this.pageSize);
-      this.pagedItems = data.results.map((item:any) => {
-        return {
-          ...item,
-          basicSalary: item.basicSalary 
-        };
-      });
+      this.pagedItems = data.results;
+     
     });
     const isFormChanged = this.isFormChanged();
 
