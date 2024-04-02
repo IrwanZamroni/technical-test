@@ -81,7 +81,7 @@
             </div> -->
             <div class="mb-3">
               <label>Group:<span style="color: red;">*</span></label>
-              <ng-select [items]="dummyGroups" appendTo="body" formControlName="group" placeholder="Select Fruits"></ng-select>
+              <ng-select [items]="dummyGroups" appendTo="body" formControlName="group" placeholder="Select Group"></ng-select>
               <div *ngIf="employeeForm?.get('group')?.invalid && employeeForm?.get('group')?.touched" class="text-danger">
                 group is required.
               </div>
